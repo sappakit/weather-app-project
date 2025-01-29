@@ -1,12 +1,22 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Button } from "./components/ui/button";
+import Layout from "./components/layout";
+import { ThemeProvider } from "./context/theme-provider";
+import WeatherDashboard from "./pages/weather-dashboard";
+import CityPage from "./pages/city-page";
 
 function App() {
   return (
-    <div className="w-full h-screen flex justify-center items-center flex-col">
-      <h1 className="text-red-500 text-3xl">Hello</h1>
-      <Button>Hi</Button>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider defaultTheme="dark">
+        <Layout>
+          <Routes>
+            <Route path="/" element={<WeatherDashboard />} />
+            <Route path="/city/:cityName" element={<CityPage />} />
+          </Routes>
+        </Layout>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
