@@ -13,7 +13,7 @@ class WeatherAPI {
       ...params,
     });
 
-    return `${endpoint}?${searchParams}`;
+    return `${endpoint}?${searchParams.toString()}`;
   }
 
   private async fetchData<T>(url: string): Promise<T> {
