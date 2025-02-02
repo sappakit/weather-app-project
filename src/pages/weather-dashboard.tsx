@@ -1,3 +1,4 @@
+import CurrentWeather from "@/components/current-weather";
 import WeatherSkeleton from "@/components/loading-skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -21,9 +22,9 @@ const WeatherDashboard = () => {
   const forecastQuery = useForecastQuery(coordinates);
   const locationQuery = useReverseGeocodeQuery(coordinates);
 
-  console.log(weatherQuery);
-  // console.log(forecastQuery);
-  // console.log(locationQuery);
+  console.log("weatherQuery", weatherQuery);
+  console.log("forecastQuery", forecastQuery);
+  console.log("locationQuery", locationQuery);
 
   const handleRefresh = () => {
     getLocation();
@@ -111,6 +112,21 @@ const WeatherDashboard = () => {
       </div>
 
       {/* CUrrent and Hourly weather */}
+      <div className="grid gap-6">
+        <div>
+          <CurrentWeather
+            data={weatherQuery.data}
+            locationName={locationName}
+          />
+          {/* current weather */}
+          {/* hourly tempature */}
+        </div>
+
+        <div>
+          {/* details */}
+          {/* forecast */}
+        </div>
+      </div>
     </div>
   );
 };
