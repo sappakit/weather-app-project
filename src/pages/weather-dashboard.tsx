@@ -131,7 +131,7 @@ const WeatherDashboard = () => {
           {/* Weather details */}
           <WeatherDetails data={weatherQuery.data} />
 
-          {/* Forecast */}
+          {/* 5-day forecast */}
           <WeatherForecast data={forecastQuery.data} />
         </div>
       </div>
