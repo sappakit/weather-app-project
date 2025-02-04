@@ -20,7 +20,7 @@ const Header = () => {
 
         <div className="flex gap-4">
           {/* Search */}
-          <CitySearch/>
+          <CitySearch />
 
           {/* Theme toggle */}
           <div
