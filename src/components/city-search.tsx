@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { format } from "date-fns";
 import { useFavorite } from "@/hooks/use-favorite";
+import { DialogDescription, DialogTitle } from "./ui/dialog";
 
 const CitySearch = () => {
   const [open, setOpen] = useState(false);
@@ -54,6 +55,11 @@ const CitySearch = () => {
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
+        <DialogTitle className="sr-only">Search Cities</DialogTitle>
+        <DialogDescription className="sr-only">
+          Type a city name to search for weather details.
+        </DialogDescription>
+
         <CommandInput
           placeholder="Search cities..."
           value={query}
